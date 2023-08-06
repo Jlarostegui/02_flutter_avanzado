@@ -1,9 +1,18 @@
+import 'package:band_names/pages/status.dart';
+import 'package:band_names/services/socket_service.dart';
 import 'package:flutter/material.dart';
 
 import 'package:band_names/pages/home.dart';
- 
-void main() => runApp(MyApp());
- 
+import 'package:provider/provider.dart';
+
+void main() async {
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(
+      create: (_) => SocketService(),
+    ),
+  ], child: const MyApp()));
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -12,9 +21,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      initialRoute: 'home',
+      initialRoute: 'status',
       routes: {
-        'home': ( _ ) => const HomePage()
+        'home': (_) => const HomePage(),
+        'status': (_) => const StatusPage(),
       },
     );
   }

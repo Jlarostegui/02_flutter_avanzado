@@ -1,0 +1,16 @@
+name: band_names_socket_server
+description: A sample command-line application.
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
+environment:
+  sdk: ^3.0.6
+
+# Add regular dependencies here.
+dependencies:
+  dart_frog_cli: ^1.0.0
+  dotenv: ^4.1.0
+  socket_io: ^1.0.1
+# path: ^1.8.0
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.21.0
